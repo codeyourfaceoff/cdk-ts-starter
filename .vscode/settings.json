@@ -2,6 +2,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "conventionalCommits.scopes": [
         "scripts",
-        "config"
+        "config",
+        "deps"
     ]
 }
