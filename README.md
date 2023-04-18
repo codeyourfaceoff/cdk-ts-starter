@@ -8,7 +8,7 @@ The easiest and simplest way to get started is by clicking the "Gitpod" button b
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/privogpynes/cdk-ts-starter)
 
-If you'd like to run this locally, another option is to install the [remote contianer extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and then clone this repo and open in vscode. Or, even easier just click this badge [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/privogpynes/cdk-ts-starter) and choose the `Clone repo in container volume` option.
+If you'd like to run this locally, another option is to install the [remote contianer extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and then clone this repo and open in vscode. Or, even easier just click this badge [![Open in Visual Studio Code]([https://open.vscode.dev/badges/open-in-vscode.svg](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc))](https://open.vscode.dev/privogpynes/cdk-ts-starter) and choose the `Clone repo in container volume` option.
 
 This has the same affect as gitpod, where it will open the project in a docker container, but this time it will be configured with your local vscode's settings as well as mount your aws credentials into the container so you can deploy.
 
