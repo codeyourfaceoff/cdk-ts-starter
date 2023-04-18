@@ -16,6 +16,8 @@ If you'd like run this fully locally, please see the [installation steps](#insta
 
 Once up and running you should see a preconfigured online (or local docker) vscode editor. Complete with some useful extensions + settings and it will already be running the `npm run dia:watch` command which generates a `.png` of the architecture as you save. It is recommended to open the `diagram.png` file as well as the `lib/cdk-ts-starter-stack.ts` file next to each other side-by-side to visualize changes in real-time.
 
+### CDK Versionings
+
 **NOTE:** This project uses the `CDK V2` all that means is that it comes with all the stable modules preinstalled instead of needing to manually install them. For instance:
 
 **V1**:
