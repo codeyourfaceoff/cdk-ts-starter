@@ -11,3 +11,4 @@ vscode:
     - mhutchie.git-graph
     - eamodio.gitlens
     - esbenp.prettier-vscode
+    - vivaxy.vscode-conventional-commits
