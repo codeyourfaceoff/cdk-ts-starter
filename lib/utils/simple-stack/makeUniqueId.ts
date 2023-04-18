@@ -1,6 +1,6 @@
 // Contents copied from node_modules/@aws-cdk/core/lib/private/uniqueid.js
 
-import { unresolved } from "@aws-cdk/core/lib/private/encoding";
+import { unresolved } from '@aws-cdk/core/lib/private/encoding'
 
 /**
  * Resources with this ID are hidden from humans
@@ -8,18 +8,18 @@ import { unresolved } from "@aws-cdk/core/lib/private/encoding";
  * They do not appear in the human-readable part of the logical ID,
  * but they are included in the hash calculation.
  */
-const HIDDEN_FROM_HUMAN_ID = "Resource";
+const HIDDEN_FROM_HUMAN_ID = 'Resource'
 
 /**
  * Resources with this ID are complete hidden from the logical ID calculation.
  */
-const HIDDEN_ID = "Default";
+const HIDDEN_ID = 'Default'
 
-const PATH_SEP = "/";
+const PATH_SEP = '/'
 
-const HASH_LEN = 8;
-const MAX_HUMAN_LEN = 240; // max ID len is 255
-const MAX_ID_LEN = 255;
+const HASH_LEN = 8
+const MAX_HUMAN_LEN = 240 // max ID len is 255
+const MAX_ID_LEN = 255
 
 /**
  * Calculates a unique ID for a set of textual components.
@@ -31,22 +31,22 @@ const MAX_ID_LEN = 255;
  * @returns a unique alpha-numeric identifier with a maximum length of 255
  */
 export function makeUniqueId(components: string[]) {
-  components = components.filter((x) => x !== HIDDEN_ID);
+  components = components.filter((x) => x !== HIDDEN_ID)
 
   if (components.length === 0) {
     throw new Error(
-      "Unable to calculate a unique id for an empty set of components"
-    );
+      'Unable to calculate a unique id for an empty set of components',
+    )
   }
 
   // Lazy require in order to break a module dependency cycle
-  const unresolvedTokens = components.filter((c) => unresolved(c));
+  const unresolvedTokens = components.filter((c) => unresolved(c))
   if (unresolvedTokens.length > 0) {
     throw new Error(
       `ID components may not include unresolved tokens: ${unresolvedTokens.join(
-        ","
-      )}`
-    );
+        ',',
+      )}`,
+    )
   }
 
   // top-level resources will simply use the `name` as-is in order to support
@@ -58,29 +58,29 @@ export function makeUniqueId(components: string[]) {
     // logical ID). sadly, changing it in the 1.x version line is impossible
     // because it will be a breaking change. we should consider for v2.0.
     // https://github.com/aws/aws-cdk/issues/6421
-    const candidate = removeNonAlphanumeric(components[0]);
+    const candidate = removeNonAlphanumeric(components[0])
 
     // if our candidate is short enough, use it as is. otherwise, fall back to
     // the normal mode.
     if (candidate.length <= MAX_ID_LEN) {
-      return candidate;
+      return candidate
     }
   }
 
   const human = removeDupes(components)
     .filter((x) => x !== HIDDEN_FROM_HUMAN_ID)
     .map(removeNonAlphanumeric)
-    .join("")
-    .slice(0, MAX_ID_LEN);
+    .join('')
+    .slice(0, MAX_ID_LEN)
 
-  return human;
+  return human
 }
 
 /**
  * Removes all non-alphanumeric characters in a string.
  */
 function removeNonAlphanumeric(s: string) {
-  return s.replace(/[^A-Za-z0-9]/g, "");
+  return s.replace(/[^A-Za-z0-9]/g, '')
 }
 
 /**
@@ -90,13 +90,13 @@ function removeNonAlphanumeric(s: string) {
  * current component.
  */
 function removeDupes(path: string[]): string[] {
-  const ret = new Array<string>();
+  const ret = new Array<string>()
 
   for (const component of path) {
     if (ret.length === 0 || !ret[ret.length - 1].endsWith(component)) {
-      ret.push(component);
+      ret.push(component)
     }
   }
 
-  return ret;
+  return ret
 }
