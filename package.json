@@ -15,22 +15,28 @@
     "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"npm run dia\""
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^2.1.0",
-    "@types/aws-lambda": "^8.10.93",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.13",
-    "aws-cdk": "^2.1.0",
-    "cdk-dia": "^0.6.1",
-    "esbuild": "^0.14.5",
-    "jest": "^27.4.5",
-    "nodemon": "^2.0.15",
-    "ts-jest": "^27.1.1",
-    "tsm": "^2.2.1",
-    "typescript": "^4.5.4"
+    "@aws-cdk/assert": "^2.34.2",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.6.3",
+    "archiver": "^5.3.1",
+    "aws-cdk": "^2.34.2",
+    "aws-sdk": "^2.1185.0",
+    "cdk-assets": "^2.34.2",
+    "cdk-dia": "^0.7.0",
+    "esbuild": "^0.14.51",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "promptly": "^3.2.0",
+    "proxy-agent": "^5.0.0",
+    "ts-jest": "^28.0.7",
+    "tsm": "^2.2.2",
+    "typescript": "^4.7.4",
+    "yaml": "^1.10.2"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.12",
+    "aws-cdk-lib": "^2.34.2",
+    "constructs": "^10.1.62",
     "source-map-support": "^0.5.21"
   }
 }
