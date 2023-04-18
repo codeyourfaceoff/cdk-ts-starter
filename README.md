@@ -73,6 +73,10 @@ This repo has a few dependencies before getting started. Namely:
 - [nodejs](https://nodejs.org/en/download/) - v12 or higher
 - [graphviz](http://www.graphviz.org/#download) - this is only needed if you want to generated the diagrams
 
-Once those are installed locally, you can clone this repo and run all the commands listed above
+Once those are installed locally you can:
+
+- clone the repo `git clone https://github.com/privogpynes/cdk-ts-starter`
+- install the node deps `npm i`
+- run all the commands listed above (I recommend `npm run dia:watch` as well as opening the `lib/stack.ts` and `diagram.png` files side by side to watch your changes as you save your files.
 
 Happy coding! 👋
