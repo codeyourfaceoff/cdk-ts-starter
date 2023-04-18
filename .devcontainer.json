@@ -1,0 +1,13 @@
+{
+  "dockerFile": "./Dockerfile",
+  "postStartCommand": "npm run dia:watch",
+  "initializeCommand": "npm install",
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "pkief.material-icon-theme",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "vivaxy.vscode-conventional-commits"
+  ]
+}
