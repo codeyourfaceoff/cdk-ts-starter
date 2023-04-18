@@ -1,8 +1,11 @@
-import { Mode } from 'aws-cdk/lib/api/aws-auth/credentials';
-import { SdkProvider } from 'aws-cdk/lib/api/aws-auth/sdk-provider';
+import { Mode } from "aws-cdk/lib/api/aws-auth/credentials";
+import { SdkProvider } from "aws-cdk/lib/api/aws-auth/sdk-provider";
 
 export async function loadCredentialsFromProfile(
-  profile: string = process.env.AWS_SDK_PROFILE!
+  profile: string = process.env.AWS_SDK_PROFILE! ||
+    process.env.AWS_PROFILE ||
+    process.env.AWS_DEFAULT_PROFILE ||
+    "default"
 ) {
   const sdk = await SdkProvider.withAwsCliCompatibleDefaults({
     profile,

@@ -2,9 +2,9 @@ import * as cdk from 'aws-cdk-lib'
 
 import { loadCredentialsFromProfile } from './credentials-helpers'
 
-export async function stackFromProfile(profile: string, app: cdk.App) {
+export async function stackFromProfile(app: cdk.App, profile?: string) {
   const credentials = await loadCredentialsFromProfile(profile);
-  const stack = new cdk.Stack(app, `profile-stack-lookup-${profile}`, {
+  const stack = new cdk.Stack(app, `profile-stack-lookup-${credentials.account?.accountId}-${uniqueId()}`, {
     env: {
       account: credentials.account!.accountId,
       region: credentials.region,
@@ -12,4 +12,16 @@ export async function stackFromProfile(profile: string, app: cdk.App) {
   });
 
   return stack;
+}
+
+
+function uniqueId() {
+    const now = last4Digits(Date.now())
+    const rand = last4Digits(Math.random())
+
+    return now + rand
+
+    function last4Digits(value: any) {
+        return value.toString().slice(-4)
+    }
 }
