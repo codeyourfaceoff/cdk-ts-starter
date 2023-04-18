@@ -1,0 +1,12 @@
+ide: code
+image:
+  file: ./Dockerfile
+tasks:
+  - init: npm install
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - pkief.material-icon-theme
+    - mhutchie.git-graph
+    - eamodio.gitlens
+    - esbenp.prettier-vscode

@@ -8,15 +8,20 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "predia": "npm run cdk synth",
+    "dia": "cdk-dia ",
+    "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"npm run dia\""
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.106.1",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
-    "jest": "^26.4.2",
-    "ts-jest": "^26.2.0",
     "aws-cdk": "1.106.1",
+    "cdk-dia": "^0.3.0",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.7",
+    "ts-jest": "^26.2.0",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
