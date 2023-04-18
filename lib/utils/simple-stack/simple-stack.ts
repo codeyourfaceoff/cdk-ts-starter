@@ -17,7 +17,7 @@ import {
 import { Construct, IConstruct } from "constructs";
 import * as cxapi from "aws-cdk-lib/cx-api";
 import { makeUniqueId } from "./makeUniqueId";
-import { referenceNestedStackValueInParent } from "aws-cdk-lib/lib/core/lib/private/refs";
+import { referenceNestedStackValueInParent } from "aws-cdk-lib/core/lib/private/refs";
 
 export class SimpleStack extends Stack {
   protected allocateLogicalId(cfnElement: CfnElement) {
