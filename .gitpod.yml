@@ -11,3 +11,4 @@ vscode:
     - eamodio.gitlens
     - esbenp.prettier-vscode
     - vivaxy.vscode-conventional-commits
+    - sleistner.vscode-fileutils
