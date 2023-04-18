@@ -4,11 +4,17 @@ This is an introductory project intended to help new users get up and running wi
 
 ## Getting Started
 
-To get started, simply click the button below which will open the workspace in an online ide. **note:** it may take up to **5min** for the container to start up so please be patient.
+The easiest and simplest way to get started is by clicking the "Gitpod" button below which will open the workspace in an online ide. **note:** it may take up to **5min** for the container to start up so please be patient. Gitpod is an online vscode ide which allows you to playaround and code as if running on your machine, but without all the hassle of installing some of the dependencies needed by this repo on your local machine. The only downside to this approach is the in ability to access configurations on your local machine like shell settings and aws credentials for deploying. 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/privogpynes/cdk-ts-starter)
 
-Once up and running you should see a preconfigured online vscode editor. Complete with some useful extensions + settings and it will already be running the `npm run dia:watch` command which generates a `.png` of the architecture as you type. It is recommended to open the `diagram.png` file as well as the `lib/cdk-ts-starter-stack.ts` file next to each other side-by-side to visualize changes in real-time.
+If you'd like to run this locally, another option is to install the [remote contianer extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and then clone this repo and open in vscode. Or, even easier just click this badge [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/privogpynes/cdk-ts-starter) and choose the `Clone repo in container volume` option.
+
+This has the same affect as gitpod, where it will open the project in a docker container, but this time it will be configured with your local vscode's settings as well as mount your aws credentials into the container so you can deploy.
+
+If you'd like run this fully locally, please see the [installation steps](#installation) below.
+
+Once up and running you should see a preconfigured online (or local docker) vscode editor. Complete with some useful extensions + settings and it will already be running the `npm run dia:watch` command which generates a `.png` of the architecture as you save. It is recommended to open the `diagram.png` file as well as the `lib/cdk-ts-starter-stack.ts` file next to each other side-by-side to visualize changes in real-time.
 
 **NOTE:** This project uses the `CDK V2` all that means is that it comes with all the stable modules preinstalled instead of needing to manually install them. For instance:
 
@@ -56,3 +62,14 @@ To read more on the `V2` differences [see here](https://docs.aws.amazon.com/cdk/
 - `npm run build` compile typescript to js
 - `npm run watch` watch for changes and compile
 - `npm run test` perform the jest unit tests
+
+## Installation
+
+This repo has a few dependencies before getting started. Namely:
+
+- [nodejs](https://nodejs.org/en/download/) - v12 or higher
+- [graphviz](http://www.graphviz.org/#download) - this is only needed if you want to generated the diagrams
+
+Once those are installed locally, you can clone this repo and run all the commands listed above
+
+Happy coding! 👋
