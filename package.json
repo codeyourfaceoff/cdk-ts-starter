@@ -9,7 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "predia": "npm run cdk synth",
+    "yamlOutput": "node ./scripts/parse-cf-json-to-yaml.js",
+    "predia": "npm run cdk synth && npm run yamlOutput",
     "dia": "cdk-dia ",
     "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"npm run dia\""
   },
