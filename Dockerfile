@@ -1,3 +1,3 @@
 FROM gitpod/workspace-full
 
-RUN brew install graphviz
+RUN sudo apt-get install -y graphviz
