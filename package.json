@@ -15,21 +15,21 @@
     "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"npm run dia\""
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^2.0.0-rc.27",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.6",
-    "aws-cdk": "^2.0.0-rc.27",
-    "cdk-dia": "^0.3.0",
-    "esbuild": "^0.13.12",
-    "jest": "^26.4.2",
-    "nodemon": "^2.0.14",
-    "ts-jest": "^26.2.0",
+    "@aws-cdk/assert": "^2.1.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.13",
+    "aws-cdk": "^2.1.0",
+    "cdk-dia": "^0.6.1",
+    "esbuild": "^0.14.5",
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "^4.5.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.0.0-rc.27",
-    "constructs": "^10.0.9",
-    "source-map-support": "^0.5.20"
+    "aws-cdk-lib": "^2.1.0",
+    "constructs": "^10.0.12",
+    "source-map-support": "^0.5.21"
   }
 }
