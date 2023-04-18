@@ -2,7 +2,7 @@
   "name": "cdk-ts-starter",
   "version": "0.1.0",
   "bin": {
-    "cdk-ts-starter": "bin/cdk-ts-starter.js"
+    "run": "bin/run.js"
   },
   "scripts": {
     "build": "tsc",
