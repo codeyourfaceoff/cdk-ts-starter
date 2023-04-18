@@ -3,6 +3,7 @@ image:
   file: ./Dockerfile
 tasks:
   - init: npm install
+    command: npm run dia:watch
 vscode:
   extensions:
     - ms-azuretools.vscode-docker
