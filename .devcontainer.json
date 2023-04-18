@@ -2,6 +2,9 @@
   "dockerFile": "./Dockerfile",
   "postStartCommand": "npm run dia:watch",
   "postCreateCommand": "npm install",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/home/gitpod/.aws,type=bind"
+  ],
   "extensions": [
     "ms-azuretools.vscode-docker",
     "pkief.material-icon-theme",
