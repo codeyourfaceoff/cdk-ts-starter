@@ -5,6 +5,7 @@
     "config",
     "deps",
     "cdk.json",
-    "simple-stack"
+    "simple-stack",
+    "dia"
   ]
 }

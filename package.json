@@ -35,8 +35,12 @@
     "yaml": "^1.10.2"
   },
   "dependencies": {
+    "@aws-prototyping-sdk/aws-arch": "^0.14.21",
+    "@aws-prototyping-sdk/cdk-graph": "^0.14.21",
+    "@aws-prototyping-sdk/cdk-graph-plugin-diagram": "^0.14.21",
     "aws-cdk-lib": "^2.34.2",
     "constructs": "^10.1.62",
+    "projen": "^0.70.5",
     "source-map-support": "^0.5.21"
   }
 }
