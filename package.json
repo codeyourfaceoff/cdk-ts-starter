@@ -24,7 +24,7 @@
     "jest": "^27.4.5",
     "nodemon": "^2.0.15",
     "ts-jest": "^27.1.1",
-    "ts-node": "^10.4.0",
+    "tsm": "^2.2.1",
     "typescript": "^4.5.4"
   },
   "dependencies": {

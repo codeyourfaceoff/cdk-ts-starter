@@ -1,8 +1,4 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    "conventionalCommits.scopes": [
-        "scripts",
-        "config",
-        "deps"
-    ]
+  "workbench.iconTheme": "material-icon-theme",
+  "conventionalCommits.scopes": ["scripts", "config", "deps", "cdk.json"]
 }
