@@ -15,9 +15,10 @@
     "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"npm run dia\""
   },
   "devDependencies": {
+    "@aws-cdk/assert": "^2.0.0-rc.18",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
-    "aws-cdk": "2.0.0-rc.17",
+    "aws-cdk": "^2.0.0-rc.18",
     "cdk-dia": "^0.3.0",
     "esbuild": "^0.12.15",
     "jest": "^26.4.2",
@@ -27,7 +28,7 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.0.0-rc.17",
+    "aws-cdk-lib": "^2.0.0-rc.18",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.16"
   }
