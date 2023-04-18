@@ -1,3 +1,7 @@
 {
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "conventionalCommits.scopes": [
+        "scripts",
+        "config"
+    ]
 }
