@@ -1,4 +1,3 @@
-ide: code
 image:
   file: ./Dockerfile
 tasks:
