@@ -9,7 +9,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "dia": "GRAPH=1 npm run cdk synth -- --app \"node -r tsm ./bin/graph.ts\"",
+    "dia": "GRAPH=1 npm run cdk synth -- --app \"node -r tsm ./bin/diagram.ts\"",
     "postdia": "cp ./cdk.out/cdkgraph/diagram.png ./diagram.png && pnpm yamlOutput",
     "dia:watch": "nodemon --watch bin --watch lib -e js,ts --exec \"pnpm dia\"",
     "yamlOutput": "node ./scripts/parse-cf-json-to-yaml.js"
@@ -34,9 +34,9 @@
     "yaml": "^1.10.2"
   },
   "dependencies": {
-    "@aws-prototyping-sdk/aws-arch": "0.14.21",
-    "@aws-prototyping-sdk/cdk-graph": "0.14.21",
-    "@aws-prototyping-sdk/cdk-graph-plugin-diagram": "0.14.21",
+    "@aws-prototyping-sdk/aws-arch": "0.17.1",
+    "@aws-prototyping-sdk/cdk-graph": "0.17.1",
+    "@aws-prototyping-sdk/cdk-graph-plugin-diagram": "0.17.1",
     "aws-cdk-lib": "^2.34.2",
     "cdk-self-destruct": "^1.2.4",
     "constructs": "^10.1.298",

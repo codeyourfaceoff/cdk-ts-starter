@@ -1,6 +1,6 @@
 // Contents copied from node_modules/@aws-cdk/core/lib/private/uniqueid.js
 
-import { unresolved } from '@aws-cdk/core/lib/private/encoding'
+import { unresolved } from '../../../node_modules/aws-cdk-lib/core/lib/private/encoding'
 
 /**
  * Resources with this ID are hidden from humans

@@ -51,42 +51,6 @@ export class SimpleStack extends Stack {
     return makeUniqueId(pathComponents)
   }
 
-  /**
-   * Sets the stack to automatically destroy itself and all its resources
-   * after a certain amount of time. @default 24hrs
-   * Applies the "DESTROY" removal policy to all resources in the stack.
-   * Use this method to automatically clean up all resources when the stack is deleted.
-   */
-  selfDestruct(props?: {
-    /**
-     * The amount of time to wait before destroying the stack
-     * @default 24hrs
-     */
-    selfDestructAfter?: Duration
-  }) {
-    Annotations.of(this).addInfo(
-      `Applying Self Destruct to all resources in stack: ${this.node.path}
-                 this is handy for development to automatically remove resources
-                 when the stack is deleted. But not recommended for production!\n`,
-    )
-    new SelfDestruct(this, 'SelfDestruct', {
-      trigger: {
-        scheduled: {
-          enabled: true,
-          afterDuration: props?.selfDestructAfter ?? Duration.hours(24),
-        },
-      },
-      defaultBehavior: {
-        destoryAllResources: true,
-        purgeResourceDependencies: true,
-        performAllAdditionalCleanup: true,
-      },
-      additionalCleanup: {
-        cleanupLambdaLogGroups: true,
-      },
-    })
-  }
-
   exportValue(exportedValue: any, options: ExportValueOptions = {}): string {
     if (options.name) {
       new CfnOutput(this, `Export${options.name}`, {

@@ -22,11 +22,6 @@ export const main = async () => {
   cdk.Annotations.of(stack).addWarning(
     'Using stackName "Stack", you may want to change that.',
   )
-
-  stack.selfDestruct({
-    selfDestructAfter: cdk.Duration.days(2),
-  })
-
   return app
 }
 
