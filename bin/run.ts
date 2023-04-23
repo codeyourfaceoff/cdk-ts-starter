@@ -3,10 +3,9 @@ import 'source-map-support/register'
 import * as cdk from 'aws-cdk-lib'
 import { Stack } from '../lib/stack'
 
-const main = async () => {
+export const main = async () => {
   const app = new cdk.App()
 
-  console.warn('Using stackName "Stack", you may want to change that.')
   const stack = new Stack(app, 'Stack', {
     /* If you don't specify 'env', this stack will be environment-agnostic.
      * Account/Region-dependent features and context lookups will not work,
@@ -19,8 +18,21 @@ const main = async () => {
     // env: { account: '123456789012', region: 'us-east-1' },
     /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
   })
+  // Delete this line once you've changed the stack name :)
+  cdk.Annotations.of(stack).addWarning(
+    'Using stackName "Stack", you may want to change that.',
+  )
+
+  stack.selfDestruct({
+    selfDestructAfter: cdk.Duration.days(2),
+  })
+
+  return app
 }
-main()
+
+if (!process.env.GRAPH) {
+  main()
+}
 
 // Example of using w/ constructLookup util
 // =====================================

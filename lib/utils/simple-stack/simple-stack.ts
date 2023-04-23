@@ -13,18 +13,78 @@ import {
   Token,
   Tokenization,
   FeatureFlags,
+  Annotations,
+  Duration,
 } from 'aws-cdk-lib'
+import { SelfDestruct } from 'cdk-self-destruct'
 import { Construct, IConstruct } from 'constructs'
 import * as cxapi from 'aws-cdk-lib/cx-api'
 import { makeUniqueId } from './makeUniqueId'
 import { referenceNestedStackValueInParent } from '../../../node_modules/aws-cdk-lib/core/lib/private/refs'
 
+/**
+ * **BE CAREFUL!!!! DO NOT USE IN PRODUCTION!!!!**
+ *
+ * This is a simplified version of the [Stack](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/core/lib/stack.ts)
+ * class from aws-cdk-lib, this version removes the unique id
+ * generation from the stack, this is useful when in development
+ * and don't want to deal with auto generated ids from the cdk
+ * that can make things noisy and hard when getting started
+ *
+ * turns: BucketName1234567890 -> BucketName
+ *
+ * This means you have to manage the uniqueness of constructs yourself
+ * otherwise there is high probability of collision
+ *
+ * It's a copy of [the cdk stack](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/core/lib/stack.ts)
+ * and the [unique id util](https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/core/lib/private/uniqueid.ts)
+ * without the hashing part.
+ *
+ * And a few handy extra helper methods useful for development
+ *
+ */
 export class SimpleStack extends Stack {
   protected allocateLogicalId(cfnElement: CfnElement) {
     const scopes = cfnElement.node.scopes
     const stackIndex = scopes.indexOf(cfnElement.stack)
     const pathComponents = scopes.slice(stackIndex + 1).map((x) => x.node.id)
     return makeUniqueId(pathComponents)
+  }
+
+  /**
+   * Sets the stack to automatically destroy itself and all its resources
+   * after a certain amount of time. @default 24hrs
+   * Applies the "DESTROY" removal policy to all resources in the stack.
+   * Use this method to automatically clean up all resources when the stack is deleted.
+   */
+  selfDestruct(props?: {
+    /**
+     * The amount of time to wait before destroying the stack
+     * @default 24hrs
+     */
+    selfDestructAfter?: Duration
+  }) {
+    Annotations.of(this).addInfo(
+      `Applying Self Destruct to all resources in stack: ${this.node.path}
+                 this is handy for development to automatically remove resources
+                 when the stack is deleted. But not recommended for production!\n`,
+    )
+    new SelfDestruct(this, 'SelfDestruct', {
+      trigger: {
+        scheduled: {
+          enabled: true,
+          afterDuration: props?.selfDestructAfter ?? Duration.hours(24),
+        },
+      },
+      defaultBehavior: {
+        destoryAllResources: true,
+        purgeResourceDependencies: true,
+        performAllAdditionalCleanup: true,
+      },
+      additionalCleanup: {
+        cleanupLambdaLogGroups: true,
+      },
+    })
   }
 
   exportValue(exportedValue: any, options: ExportValueOptions = {}): string {

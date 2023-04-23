@@ -36,7 +36,7 @@ import * as autoscaling from "@aws-cdk/aws-autoscaling";
 
 ```ts
 import * as ec2 from "aws-cdk-lib/aws-ec2";
-import * as ec2 from "aws-cdk-lib/aws-autoscaling";
+import * as autoscaling from "aws-cdk-lib/aws-autoscaling";
 // Since 'aws-cdk-lib' is installed,
 // both libs are installed and versions are in sync
 ```
@@ -70,9 +70,8 @@ To read more on the `V2` differences [see here](https://docs.aws.amazon.com/cdk/
 
 This repo has a few dependencies before getting started. Namely:
 
-- [nodejs](https://nodejs.org/en/download/) - v12 or higher
+- [nodejs](https://nodejs.org/en/download/) - v16 or higher
 - [pnpm](https://pnpm.io/installation) - v6 or higher
-- [graphviz](http://www.graphviz.org/#download) - this is only needed if you want to generated the diagrams
 
 Once those are installed locally you can:
 
