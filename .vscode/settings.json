@@ -6,6 +6,7 @@
     "deps",
     "cdk.json",
     "simple-stack",
-    "dia"
+    "dia",
+    "devcontainer"
   ]
 }
